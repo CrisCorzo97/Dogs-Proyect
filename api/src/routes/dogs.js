@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const {Dog} = require('../db');
+const {Dog, Temperament} = require('../db');
 
 const getAllDogs = require('../Funciones/Todo');
 
@@ -72,20 +72,51 @@ router.get('/:id', async (req, res) => {
     };
 });
 
+
+async function addTemperaments (t, d) {
+    const [temp, created] = await Temperament.findOrCreate({
+        where: {
+            name: t
+        }
+    }); 
+
+    await d.addTemperament(temp); //vincula el perro con el temperamento
+    // await temp.addDog(d); //vincula el temperamento con el perro
+};
+
+
 router.post('/', async (req, res) => {
     const {name, height, weight, lifeSpan, temperament} = req.body;
+    if(!name || !height || !weight) {
+        res.status(404).send('The name, height and weight are required')
+    }
     try {
-        if(!name || !height || !weight) {
-            res.status(404).send('The name, height and weight are required')
-        } else {
-        const createDog = await Dog.create({
-            name, 
-            height, 
-            weight, 
-            lifeSpan, 
+        const [dog, created] = await Dog.findOrCreate({
+            where: {
+                name: name, 
+            },
+            defaults: {
+                height: height,
+                weight: weight,
+                lifeSpan: lifeSpan,
+            }
         });
-        await createDog.setTemperament(temperament);
-        res.status(200).send('The dog has been successfully created!');
+
+        if(created && temperament) {
+            temperament.forEach(t => {
+                addTemperaments(t, dog);
+            });
+            
+            const dogCreated = {
+                name: dog.name,
+                height: dog.height,
+                weight: dog.weight,
+                lifeSpan: dog.lifeSpan,
+                temperament: temperament
+            }
+            return res.status(200).json(dogCreated);
+        } else {
+            res.send('Failed to create the dog');
         }
     } catch (e) {
         res.status(500).send('There was a problem in the server', e);
