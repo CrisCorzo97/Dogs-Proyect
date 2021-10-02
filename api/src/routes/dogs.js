@@ -65,6 +65,26 @@ router.get('/:id', async (req, res) => {
                 })
                 return res.status(200).json(infoDetails);
             }
+            const dogFoundByPk = await Dog.findByPk(id, {
+                attributes: ['name','height', 'weight', 'lifeSpan'],
+                include: Temperament,
+            });
+
+            if(dogFoundByPk) {
+                const temps = [];
+                dogFoundByPk.temperaments.forEach(t => temps.push(t.name));
+                
+                const details = {
+                    name: dogFoundByPk.name,
+                    image: dogFoundByPk.image,
+                    temperament: temps,
+                    height: dogFoundByPk.height,
+                    weight: dogFoundByPk.weight,
+                    lifeSpan: dogFoundByPk.lifeSpan
+                }
+                return res.status(200).json(details);
+            } 
+
             return res.status(404).send('Dog not found');
         };
     } catch (e) {
@@ -81,7 +101,6 @@ async function addTemperaments (t, d) {
     }); 
 
     await d.addTemperament(temp); //vincula el perro con el temperamento
-    // await temp.addDog(d); //vincula el temperamento con el perro
 };
 
 

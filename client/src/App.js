@@ -1,13 +1,20 @@
 import './App.css';
-import {BrowserRouter, Route, Switcher} from 'react-router-dom';
+import React from 'react';
+import {Route} from 'react-router-dom';
+import Landing from './components/Landing.jsx';
+import Home from './components/Home.jsx';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <h1>Henry Dogs</h1>
-      </div>
-    </BrowserRouter>
+    <React.Fragment>
+      <Route exact path="/" >
+        <Landing />
+      </Route>
+      <Route path="/home" >
+        <Home />
+      </Route>
+        
+    </React.Fragment>
   );
 }
 

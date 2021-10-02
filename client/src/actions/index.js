@@ -8,4 +8,18 @@ export function getDogs() {
             payload: dogs.data
         })
     }
+};
+
+export function addNewDog(dog) {
+    return {
+        type: 'ADD_NEW_DOG',
+        payload: dog
+    }
+};
+
+export function removeDog(id) {
+    return {
+        type: 'REMOVE_DOG',
+        payload: id
+    }
 }

@@ -1,0 +1,56 @@
+body {
+    background-image: url(../images/jbaWpc.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.containerLand {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.landing {
+    text-align: center;
+    margin-top: 10%;
+    margin-right: 10%;
+}
+
+.landing1 {
+    text-align: center;
+    margin-top: 8%;
+    margin-left: 10%;
+}
+
+.h1Landing {
+    color: #F3533A;
+    font-size: 60px;
+    text-shadow: 4px 4px 5px black;
+}
+
+.h1Landing1 {
+    color: #FA9F42;
+    font-size: 60px;
+    text-shadow: 4px 4px 5px black;
+}
+
+.btnLanding {
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    border-radius: 10px;
+    border: 2px black solid;
+
+    background-color: #5ACFC9;
+    
+
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+.btnLanding:hover {
+    background-color: #8AD879;
+}

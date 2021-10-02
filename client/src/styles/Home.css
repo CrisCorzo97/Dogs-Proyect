@@ -1,0 +1,44 @@
+.navHome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #5ACFC9;
+
+    padding-bottom: 2%;
+}
+
+.divNewDog {
+    background-color: #8AD879;
+    padding: 1%;
+}
+.btnNewDog {
+    background-color: #FA9F42;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; 
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
