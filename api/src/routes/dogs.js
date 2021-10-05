@@ -11,17 +11,10 @@ router.get('/', async (req, res) => {
     if(name) {
         try {
             const info = await getAllDogs();
-            const infoName = info.filter(dog => dog.name === name);
+            const infoName = info.filter(dog => dog.name.toLowerCase().includes(name.toString().toLowerCase()));
 
             if(infoName.length > 0) {
-                const infoPrincipal = infoName.map(m => {
-                    return {
-                        name: m.name,
-                        image: m.image,
-                        temperament: m.temperament
-                    }
-                })
-                res.status(200).json(infoPrincipal);
+                res.status(200).json(infoName);
             } else {
                 res.send('The dog breed was not found!')
             }
@@ -31,14 +24,7 @@ router.get('/', async (req, res) => {
     } else {
         try {
             const info = await getAllDogs();
-            const infoPrincipal = info.map(dog => {
-                return {
-                    name: dog.name,
-                    image: dog.image,
-                    temperament: dog.temperament
-                }
-            });
-            res.status(200).json(infoPrincipal);
+            res.status(200).json(info);
         } catch (e) {
             res.status(500).send('There was a problem in the server', e);
         }
@@ -53,39 +39,10 @@ router.get('/:id', async (req, res) => {
             const dogFound = dogs.filter(dog => dog.id == id);
 
             if(dogFound.length > 0) {
-                const infoDetails = dogFound.map(dog => {
-                    return {
-                        name: dog.name,
-                        image: dog.image,
-                        temperament: dog.temperament,
-                        height: dog.height,
-                        weight: dog.weight,
-                        lifeSpan: dog.lifeSpan
-                    }
-                })
-                return res.status(200).json(infoDetails);
+                return res.status(200).json(dogFound);
+            } else {
+                return res.status(404).send('Dog not found');
             }
-            const dogFoundByPk = await Dog.findByPk(id, {
-                attributes: ['name','height', 'weight', 'lifeSpan'],
-                include: Temperament,
-            });
-
-            if(dogFoundByPk) {
-                const temps = [];
-                dogFoundByPk.temperaments.forEach(t => temps.push(t.name));
-                
-                const details = {
-                    name: dogFoundByPk.name,
-                    image: dogFoundByPk.image,
-                    temperament: temps,
-                    height: dogFoundByPk.height,
-                    weight: dogFoundByPk.weight,
-                    lifeSpan: dogFoundByPk.lifeSpan
-                }
-                return res.status(200).json(details);
-            } 
-
-            return res.status(404).send('Dog not found');
         };
     } catch (e) {
         res.status(500).send('There was a problem in the server', e);
@@ -105,37 +62,43 @@ async function addTemperaments (t, d) {
 
 
 router.post('/', async (req, res) => {
-    const {name, height, weight, lifeSpan, temperament} = req.body;
-    if(!name || !height || !weight) {
-        res.status(404).send('The name, height and weight are required')
+    const {name, height, weight, image, lifeSpan, temperament} = req.body;
+    if(!name || !height || !weight || !image) {
+        res.status(404).send('The name, height, weight and iumage are required')
     }
     try {
-        const [dog, created] = await Dog.findOrCreate({
-            where: {
-                name: name, 
-            },
-            defaults: {
-                height: height,
-                weight: weight,
-                lifeSpan: lifeSpan,
-            }
+        const dog = await Dog.create({
+            name: name, 
+            height: height,
+            weight: weight,
+            image: image,
+            lifeSpan: lifeSpan,
         });
+        const dogWithOut = {
+            name: name, 
+            height: height,
+            weight: weight,
+            image: image,
+            lifeSpan: lifeSpan,
+        }
 
-        if(created && temperament) {
+        if(temperament) {
             temperament.forEach(t => {
                 addTemperaments(t, dog);
             });
             
             const dogCreated = {
-                name: dog.name,
-                height: dog.height,
-                weight: dog.weight,
-                lifeSpan: dog.lifeSpan,
-                temperament: temperament
+                name: name,
+                weight: weight,
+                height: height,
+                image: image,
+                temperament: temperament,
+                lifeSpan: lifeSpan,
             }
+
             return res.status(200).json(dogCreated);
         } else {
-            res.send('Failed to create the dog');
+            res.status(200).json(dogWithOut);
         }
     } catch (e) {
         res.status(500).send('There was a problem in the server', e);

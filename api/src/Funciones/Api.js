@@ -10,7 +10,7 @@ module.exports = getApiInfo = async () => {
             height: d.height.metric,
             image: d.image.url,
             temperament: [d.temperament].join().split(',').map(m => m.trim()),
-            lifeSpan: d.life_Span
+            lifeSpan: d.life_span
         };
     });
     return apiInfo;

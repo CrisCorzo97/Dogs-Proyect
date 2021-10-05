@@ -10,7 +10,7 @@ const getTemperaments = async () => {
         const allDogs = await getApiInfo();
         allDogs.map(d => {
             d.temperament.forEach(e => {
-                if(!temperaments.includes(e)) {
+                if(!temperaments.includes(e) && e !== "") {
                     temperaments.push(e);
                 }
             });
