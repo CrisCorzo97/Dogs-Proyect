@@ -4,23 +4,35 @@
   justify-content: center;
   align-items: center;
 
-  background-color: #5ACFC9;
+  background-color: #5acfc9a4;
 }
 
 .h2Search {
-  color: white;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow: 3px 3px 7px black;
 }
 
 .searchBar {
+  display: flex;
   flex-direction: row;
   align-items:center;
   justify-content: center;
 }
 
 .inputSearch {
-  padding: 20%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid black;
+  width: 400px;
 }
 
 .btnSearch {
-  padding: 20%;
+  padding: 6px;
+  margin-bottom: 5px;
+  border-radius: 0px 10px 10px 0px;
+  border: 1px solid black;
+  width: 60px;
+  font-size: 17px;
 }

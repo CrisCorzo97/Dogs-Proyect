@@ -6,7 +6,10 @@ module.exports = getApiInfo = async () => {
         return {
             id: d.id,
             name: d.name,
-            weight: d.weight.metric,
+            weight: [d.weight.metric].join().split(' ').filter(w => w !== '-').length === 1 ? 
+                    [d.weight.metric].join().split(' ').filter(w => w !== '-').map(e => e === 'NaN' ? 25 : parseInt(e, 10)).pop() :
+                    ([d.weight.metric].join().split(' ').filter(w => w !== '-').map(e => e === 'NaN' ? 0 : parseInt(e, 10))[0] +
+                    [d.weight.metric].join().split(' ').filter(w => w !== '-').map(e => parseInt(e, 10))[1]) / 2,
             height: d.height.metric,
             image: d.image.url,
             temperament: [d.temperament].join().split(',').map(m => m.trim()),

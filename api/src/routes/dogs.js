@@ -64,7 +64,7 @@ async function addTemperaments (t, d) {
 router.post('/', async (req, res) => {
     const {name, height, weight, image, lifeSpan, temperament} = req.body;
     if(!name || !height || !weight || !image) {
-        res.status(404).send('The name, height, weight and iumage are required')
+        res.status(404).send('The name, height, weight and image are required')
     }
     try {
         const dog = await Dog.create({
