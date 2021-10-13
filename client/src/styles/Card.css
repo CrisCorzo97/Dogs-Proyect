@@ -1,0 +1,65 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #995d29d8;
+    border-radius: 50px;
+
+    width: 250px;
+    height: 400px;
+    text-decoration: none;
+    margin: 10px;
+}
+
+span {
+    color: white;
+    font-size: 16px;
+}
+
+.img {
+    width: 250px;
+    height: 200px;
+}
+
+.breed {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff8b4;
+    margin: 5px;
+}
+
+.list {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: start;
+    text-decoration: none;
+    color: white;
+    margin-right: 30px;
+}
+
+.contList {
+    display: grid;
+    justify-content: space-around;
+}
+
+.temps {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto;
+    justify-content: start;
+
+    list-style: none;
+    text-decoration: none;
+    text-align: start;
+}

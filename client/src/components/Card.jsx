@@ -1,19 +1,21 @@
 import React from "react";
-
+import '../styles/Card.css';
 
 export default function Card({name, weight, image, temperament}) {
     
     return (
-        <React.Fragment>
-            <h2>{name}</h2>
-            <h4>Peso promedio: {weight}Kgs</h4>
-            <img src={image} alt='hola' height='250px' weight='300px' />
-            <h4>Temperamentos:</h4>
-            <ul>
-                {temperament.map((temp, index) => 
-                    <li key={index}>{temp}</li>
-                )}
-            </ul>
-        </React.Fragment>
+        <div className="card">
+            <h2 className='breed'>{name}</h2>
+            <h4 className='text'>Peso promedio: <span>{weight}Kgs</span></h4>
+            <img src={image} alt='hola'className='img' />
+            <h4 className='text'>Temperamentos:</h4>
+            <div className='contList'>
+                <ul className='temps'>
+                    {temperament.map((temp, index) => 
+                        <li className='list' key={index}>{temp}</li>
+                    )}
+                </ul>
+            </div>
+        </div>
     )
 }

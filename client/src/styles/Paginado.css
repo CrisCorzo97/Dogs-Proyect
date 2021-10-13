@@ -10,7 +10,7 @@
     text-decoration: none;
     color: white;
     font-size: 20px;
-    background-color: #FA9F42;
+    background-color: #bb7134;
     padding: 10px;
     width: 25px;
     height: 25px;
@@ -18,4 +18,10 @@
     border-radius: 10px;
     text-align: center;
     text-shadow: 0.5px 0.5px 2px black;
+    box-shadow: 1px 1px 5px black;
+}
+
+.numbers:hover {
+    background-color: #fff8b4;
+    color: black;
 }

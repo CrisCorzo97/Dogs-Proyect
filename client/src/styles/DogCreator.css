@@ -1,0 +1,154 @@
+.containerPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #bb7134ad;
+    background-position: center;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3%;
+    border-radius: 30px;
+    padding: 2%;
+
+}
+
+.form {
+    width: 100%;
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnBack {
+    padding: 10px;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background-color: #fcf8af;
+    border: 1px solid black;
+    color: #975c2c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btnBack:hover {
+    box-shadow: 2px 2px 5px black;
+}
+
+.encabezado {
+    color: #fcf8af;
+    text-shadow: 0.5px 0.5px 5px black;
+}
+
+.labels {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+    padding-right: 5%;
+    font-weight: 600;
+}
+
+.requires {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.errors {
+    margin-top: 0px;
+    color: red;
+    text-shadow: 0.5px 0.5px 2px black;
+}
+
+.inputs {
+    padding: 9px;
+    margin-top: 1%;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 430px;
+}
+
+.btnCreateDog {
+    margin-left: 27%;
+    margin-top: 20px;
+
+    background-image: url(../images/boton-hueso.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #bb713400;
+
+    border: 1px solid #bb713400;
+    border-radius: 20px;
+    padding: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    font-size: large;
+    font-weight: bold;
+    color: rgb(61, 61, 61);
+}
+.btnCreateDog:hover {
+    background-image: url(../images/boton-hueso2.png);
+    color: white;
+}
+
+.selectTemp {
+    padding: 9px;
+    margin-top: 1%;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 450px;
+
+}
+
+.addTemps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.allTemps {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.indivTemp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fcf8af;
+    margin: 8px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px black;
+}
+
+#temp {
+    margin: 10px;
+    color: #975c2c;
+    font-weight: 400;
+    text-shadow: 0.5px 0.5px 1px black;
+}
+
+#btn {
+    margin: 10px;
+    background-color: rgb(236, 57, 57);
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 4px;
+    width: 25px;
+}

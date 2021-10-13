@@ -1,0 +1,83 @@
+.detailsPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 20px;
+
+    background-color: #bb7134ad;
+    margin: 30px;
+    border-radius: 30px;
+}
+
+.dogTitle {
+    color: black;
+    background-image: url(../images/boton-hueso.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15%;
+    margin: 0px;
+}
+
+.imagen {
+    width: 80%;
+    box-shadow: 3px 3px 15px black;
+    border-radius: 30px;
+}
+
+.titles {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fcf8af;
+    font-size: 18px;
+    margin: 10px;
+    text-shadow: 0.3px 0.3px 2px black;
+}
+
+.span {
+    color: white;
+    text-shadow: 0.3px 0.3px 2px black;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 150px;
+    color: white;
+    font-size: 24px;
+    text-shadow: 0.5px 0.5px 5px black;
+
+    background-image: url(../images/boton-hueso2.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10%;
+}
+
+.btnBack1 {
+    padding: 10px;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background-color: #fcf8af;
+    border: 1px solid black;
+    color: #975c2c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btnBack1:hover {
+    box-shadow: 2px 2px 5px black;
+}

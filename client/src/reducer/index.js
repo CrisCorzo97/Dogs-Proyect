@@ -2,6 +2,7 @@ const initialState = {
     dogs: [],
     allDogs: [],
     temperaments: [],
+    details: [],
 }
 
 
@@ -73,16 +74,10 @@ export default function rootReducer (state=initialState, action) {
                 dogs: order
             }
         
-        case 'ADD_NEW_DOG':
+        case 'GET_DETAILS':
             return {
                 ...state,
-                dogs: state.dogs.concat(action.payload)
-            }
-
-        case 'REMOVE_DOG':
-            return {
-                ...state,
-                dogs: state.dogs.filter(d => d.id !== action.payload)
+                details: action.payload
             }
 
         default:

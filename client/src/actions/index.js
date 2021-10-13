@@ -31,6 +31,7 @@ export function getNameDog(name) {
     return async (dispatch) => {
         try {
             let dog = await axios.get(`http://localhost:3001/dogs?name=${name}`); 
+    
             return dispatch({
                 type: 'GET_NAME_DOG',
                 payload: dog.data
@@ -62,16 +63,12 @@ export function Order(payload) {
     }
 }
 
-export function addNewDog(dog) {
-    return {
-        type: 'ADD_NEW_DOG',
-        payload: dog
-    }
-};
-
-export function removeDog(id) {
-    return {
-        type: 'REMOVE_DOG',
-        payload: id
+export function getDetails(id) {
+    return async (dispatch) => {
+        let dog = await axios.get(`http://localhost:3001/dogs/${id}`);
+        return dispatch({
+            type: 'GET_DETAILS',
+            payload: dog.data
+        })
     }
 }

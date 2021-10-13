@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
             if(infoName.length > 0) {
                 res.status(200).json(infoName);
             } else {
-                res.send('The dog breed was not found!')
+                res.status(200).json([])
             }
         } catch (e) {
             res.status(500).send('There was a problem in the server', e);

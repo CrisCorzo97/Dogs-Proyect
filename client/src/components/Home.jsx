@@ -57,23 +57,23 @@ export default function Home() {
                 <Link to='/dog' className="btnNewDog">Crear una raza</Link>
             </div>
             <section className="container">
-                <h1>Razas</h1>
-                <button onClick={e => handleClick(e)}>Cargar todas las razas</button>
+                <h1 className="title">Listado de Razas</h1>
+                <button onClick={e => handleClick(e)} className='reload'>🔄 Cargar todas las razas</button>
                 <section>
                     <div className="filters">
-                        <select onChange={e => handleSort(e)} >
+                        <select onChange={e => handleSort(e)} className='filter'>
                             <option value="none">Ordenar</option>
                             <option value="asc">A - Z</option>
                             <option value="desc">Z - A</option>
                             <option value="weightAsc">Menor Peso</option>
                             <option value="weightDesc">Mayor Peso</option>
                         </select>
-                        <select onChange={e => handleFilteCreated(e)} >
+                        <select onChange={e => handleFilteCreated(e)} className='filter'>
                             <option value="all">Todos</option>
                             <option value="api">Raza Existente</option>
                             <option value="created">Raza Creada</option>
                         </select>
-                        <select onChange={e => handleFilterByTemp(e)}>
+                        <select onChange={e => handleFilterByTemp(e)} className='filter'>
                             <option value="all">Todos</option>
                             {allTemps.map((t) => {
                                 return(
@@ -84,15 +84,17 @@ export default function Home() {
                     </div>
                     <div className="contPagination">
                         <Paginado dogsPerPage={dogsPerPage} allDogs={allDogs.length} paginado={paginado} />
-                        {actualDogs && actualDogs.map((dog, index) => {
-                            return(
-                                <div>
-                                <Link to={'/home/' + dog.id}>
-                                    <Card key={index} name={dog.name} weight={dog.weight} image={dog.image} temperament={dog.temperament} />
-                                </Link>
-                            </div>
-                            )
-                        })}
+                        <div className='grid'>
+                            {actualDogs && actualDogs.map((dog, index) => {
+                                return(
+                                    <div>
+                                        <Link to={'/home/' + dog.id}>
+                                            <Card key={index} name={dog.name} weight={dog.weight} image={dog.image} temperament={dog.temperament} />
+                                        </Link>
+                                    </div>
+                                )
+                            })}
+                        </div>
 
                         <Paginado dogsPerPage={dogsPerPage} allDogs={allDogs.length} paginado={paginado} />
                     </div>
