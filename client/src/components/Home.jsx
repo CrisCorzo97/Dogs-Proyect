@@ -21,14 +21,14 @@ export default function Home() {
     const indexFirstDog = indexLastDog - dogsPerPage;
     const actualDogs = allDogs.slice(indexFirstDog, indexLastDog);
 
-    const paginado = (pageNumber) => {
-        setActualPage(pageNumber);
-    }
-
     useEffect(() => {
         dispatch(getDogs());
         dispatch(getTemps());
     }, [dispatch]);
+
+    const paginado = (pageNumber) => {
+        setActualPage(pageNumber);
+    }
 
     function handleClick(e) {
         e.preventDefault();

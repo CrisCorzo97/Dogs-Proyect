@@ -51,13 +51,13 @@ router.get('/:id', async (req, res) => {
 
 
 async function addTemperaments (t, d) {
-    const [temp, created] = await Temperament.findOrCreate({
+    const temp = await Temperament.findOne({
         where: {
             name: t
         }
     }); 
 
-    await d.addTemperament(temp); //vincula el perro con el temperamento
+    await d.addTemperament(temp);
 };
 
 
