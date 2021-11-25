@@ -10,10 +10,10 @@ El cliente es una aplicación [React](https://reactjs.org/), con [React Router](
 
 ### Capturas de pantalla
 
-Homepage
+Landing
 ![Homepage](./img/img1.png)
 
-Breeds list
+Homepage
 ![Breeds list](./img/img2.png)
 
 Filtering
@@ -35,11 +35,11 @@ Creating a new breed
 
 ### Configuración de la Base de Datos y el archivo `.env`
 
-En primer lugar, debe crear una base de datos postgresql. Luego vaya a la carpeta `api`, cambie el nombre del archivo `.example.env` a` .env`, y complete las credenciales de la base de datos.
+En primer lugar, debe crear una base de datos postgresql. Luego vaya a la carpeta `api`, cambie el nombre del archivo `.example.env` a `.env`, y complete las credenciales de la base de datos.
 
-### Running locally in development mode
+### Ejecutando localmente en modo desarrollador
 
-To get started, just clone the repository and run `npm install` and `npm start`.:
+Para comenzar, simplemente clone el repositorio y ejecute `npm install` y `npm start`:
 
 ```sh
 git clone https://github.com/facuparedes/woof.git
