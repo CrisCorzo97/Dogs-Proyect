@@ -16,19 +16,19 @@ Landing
 Homepage
 ![Breeds list](./img/img2.png)
 
-Filtering
+Filtrando
 ![Filtering](./img/img3.png)
 
-Sort and filter at same time
+Ordenando por nombre y por peso
 ![Sort and filter at same time](./img/img4.png)
 
-Searching
+Buscando
 ![Searching](./img/img5.png)
 
-Breed details
+Detalles de la raza
 ![Breed details](./img/img6.png)
 
-Creating a new breed
+Creando una nueva raza
 ![Creating](./img/img7.png)
 
 ## Pasos para probar la SPA
@@ -42,7 +42,7 @@ En primer lugar, debe crear una base de datos postgresql. Luego vaya a la carpet
 Para comenzar, simplemente clone el repositorio y ejecute `npm install` y `npm start`:
 
 ```sh
-git clone https://github.com/facuparedes/woof.git
+git clone https://github.com/CrisCorzo97/Dogs-Proyect.git
 
 cd ./api
 npm install
@@ -53,11 +53,11 @@ npm install
 npm start
 ```
 
-Note: If you are running on Windows and you have issues with `fsevents`, run install --noptional flag (i.e. npm install --no-optional) which will skip installing fsevents.
+Nota: Si está ejecutando Windows y tiene problemas con `fsevents`, ejecute `npm install --no-optional` que omitirá la instalación de fsevents.
 
-### Building and deploying in production
+### Construcción e implementación en producción
 
-If you wanted to run this site in production, you should install modules then build the site with npm run build and run it with `serve`:
+Si desea ejecutar este sitio en producción, debe instalar módulos y luego construir el sitio con `npm run build` y ejecutarlo con `serve`:
 
 #### Linux & MacOS
 
@@ -81,18 +81,18 @@ npm install -g serve
 serve -s build
 ```
 
-Note: You should run npm run build again any time you make changes to the site.
+Nota: debe ejecutar `npm run build` nuevamente cada vez que realice cambios en el sitio.
 
-## Todo
+## Lista de acciones a realizar en la SPA
 
+- [x] Landing
 - [x] Homepage
-- [x] List breeds
-  - [x] Filter breeds
-  - [x] Sort breeds
-  - [x] Search breeds
-  - [x] Show breed's temperaments
-- [x] Show breed's details
-- [x] Create breeds
-  - [ ] Custom images
-- [ ] Edit breeds
-- [ ] Delete breeds
+  - [x] Filtro por raza
+  - [x] Ordenar alfabéticamente y por peso
+  - [x] Buscar raza/s
+  - [x] Filtrar por temperamento
+- [x] Ver detalles de cada raza
+- [x] Crear una nueva raza
+  - [x] Imagen personalizable
+- [ ] Editar raza
+- [ ] Eliminar raza
