@@ -8,7 +8,7 @@ Este proyecto es solo una versión inicial, por lo que se puede actualizar en un
 
 El cliente es una aplicación [React](https://reactjs.org/), con [React Router](https://reacttraining.com/react-router/web/guides/quick-start) y [Redux](https://redux.js.org/). API utiliza [Express](https://expressjs.com/), [Sequelize](https://sequelize.org/) y [PostgreSQL](https://www.postgresql.org/) como base de datos.
 
-### Screenshots
+### Capturas de pantalla
 
 Homepage
 ![Homepage](./img/img1.png)
@@ -31,11 +31,11 @@ Breed details
 Creating a new breed
 ![Creating](./img/img7.png)
 
-## Getting started
+## Pasos para probar la SPA
 
-### Database and .env files setup
+### Configuración de la Base de Datos y el archivo `.env`
 
-Firstly, you must create a postgresql database. Then go `api` folder and `client` folder, rename `.example.env` file to `.env`, and then fill in the database credentials.
+En primer lugar, debe crear una base de datos postgresql. Luego vaya a la carpeta `api`, cambie el nombre del archivo `.example.env` a` .env`, y complete las credenciales de la base de datos.
 
 ### Running locally in development mode
 
