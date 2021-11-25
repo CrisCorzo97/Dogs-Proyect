@@ -91,3 +91,7 @@
     grid-template-rows: auto auto;
     justify-content: center;
 }
+
+.link {
+    text-decoration: none;
+}

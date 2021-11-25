@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {getNameDog} from '../actions/index';
 
 import '../styles/SearchBar.css';
+import {BsSearch} from 'react-icons/bs';
 
 
 export default function SearchBar() {
@@ -38,7 +39,7 @@ export default function SearchBar() {
                     type="submit"
                     onClick={e => handleSubmit(e)} 
                     className="btnSearch" 
-                >🔍️</button>
+                ><BsSearch/></button>
             </div>
         </div>
     )

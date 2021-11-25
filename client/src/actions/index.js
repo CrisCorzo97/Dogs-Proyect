@@ -65,7 +65,7 @@ export function Order(payload) {
 
 export function getDetails(id) {
     return async (dispatch) => {
-        let dog = await axios.get(`http://localhost:3001/dogs/${id}`);
+        let dog = await axios.get(`http://localhost:3001/dogs/id?id=${id}`);
         return dispatch({
             type: 'GET_DETAILS',
             payload: dog.data

@@ -7,6 +7,21 @@ const getAllDogs = require('../Funciones/Todo');
 
 router.get('/', async (req, res) => {
     const {name} = req.query;
+
+    // if(id) {
+    //     try {
+    //         const allDogs = await getAllDogs();
+    //         const dogFound = allDogs.filter(dog => dog.id === id);
+
+    //         if(dogFound.length > 0) {
+    //             res.status(200).json(dogFound);
+    //         } else {
+    //             res.send('No se ha encontrado tal raza!');
+    //         }
+    //     } catch(err) {
+    //         console.log(err);
+    //     }
+    // }
     
     if(name) {
         try {
@@ -31,9 +46,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/id', async (req, res) => {
     try {
-        const {id} = req.params;
+        const {id} = req.query;
         if(id) {
             const dogs = await getAllDogs();
             const dogFound = dogs.filter(dog => dog.id == id);

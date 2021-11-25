@@ -1,6 +1,6 @@
 # Dogs
 
-Se trata de un desafío del Bootcamp de [Henry](https://www.soyhenry.com/). Es una Single Page Application (SPA) basada en [TheDogApi](https://thedogapi.com/), con API y cliente personalizados. 
+Se trata de un desafío del Bootcamp de [Henry](https://www.soyhenry.com/). Es una Single Page Application (SPA) basada en [TheDogApi](https://thedogapi.com/), con API y cliente personalizados.
 
 El mismo debía ser preparado en un lapso de 3 semanas utilizando sólo las tecnologías aprendidas en dicho Bootcamp.
 
@@ -11,25 +11,31 @@ El cliente es una aplicación [React](https://reactjs.org/), con [React Router](
 ### Capturas de pantalla
 
 Landing
-![Homepage](./img/img1.png)
+![Landing](./client/src/images/Landing.jpg)
 
 Homepage
-![Breeds list](./img/img2.png)
+
+![Homepage](./client/src/images/Homepage.gif)
 
 Filtrando
-![Filtering](./img/img3.png)
+
+![Filtrando](./client/src/images/Filtros.gif)
 
 Ordenando por nombre y por peso
-![Sort and filter at same time](./img/img4.png)
+
+![Ordenando por nombre y por peso](./client/src/images/Ordenamiento.gif)
 
 Buscando
-![Searching](./img/img5.png)
+
+![Buscando](./client/src/images/Búsqueda.gif)
 
 Detalles de la raza
-![Breed details](./img/img6.png)
+
+![Detalles de la raza](./client/src/images/Detalles.gif)
 
 Creando una nueva raza
-![Creating](./img/img7.png)
+
+![Creating](./client/src/images/Crear-raza.gif)
 
 ## Pasos para probar la SPA
 

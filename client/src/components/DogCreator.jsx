@@ -9,14 +9,11 @@ function validate(input) {
     let errors = {};
     if(!input.name) {
         errors.name = 'Se requiere colocar un Nombre';
-    }
-    if(input.weight.length === 0) {
+    } else if(input.weight.length === 0) {
         errors.weight = 'Se requiere colocar un Peso';
-    }
-    if(input.height.length === 0) {
+    } else if(input.height.length === 0) {
         errors.height = 'Se requiere colocar una Altura';
-    }
-    if(!input.image) {
+    } else if(!input.image) {
         errors.image = 'Se requiere la Url de la imagen';
     }
     return errors;

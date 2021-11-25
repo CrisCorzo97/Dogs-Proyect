@@ -44,10 +44,12 @@ export default function Home() {
 
     function handleFilteCreated(e) {
         dispatch(filterCreated(e.target.value));
+        setActualPage(1);
     }
 
     function handleFilterByTemp(e) {
         dispatch(filterByTemp(e.target.value));
+        setActualPage(1);
     }
 
     return (
@@ -88,7 +90,7 @@ export default function Home() {
                             {actualDogs && actualDogs.map((dog, index) => {
                                 return(
                                     <div>
-                                        <Link to={'/home/' + dog.id}>
+                                        <Link className="link" to={'/home/' + dog.id}>
                                             <Card key={index} name={dog.name} weight={dog.weight} image={dog.image} temperament={dog.temperament} />
                                         </Link>
                                     </div>
